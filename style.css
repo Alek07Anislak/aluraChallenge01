@@ -17,8 +17,10 @@ header{
     padding: 0px;
     gap: 40px;*/
 
-    width: 120px;
-    height: 48px;
+    /*width: 120px;
+    height: 48px;*/
+    width: 8.5%;
+    height: 6.5%;
     margin-top: 10px;
     z-index: 9999;
     

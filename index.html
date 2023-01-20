@@ -77,8 +77,8 @@
                 return;
               }
 
-              
-              if (/[^a-zA-Z0-9,\ ;\ ñ\ \n . ]/g.test(frase)) {
+              // Valida si la frase tiene caracteres especiales,  
+              if (/[^a-zA-Z0-9,\ ;\ !\ ñ\ \n . ]/g.test(frase)) {
                 alert("No se permite Caracteres Especiales");
                 document.getElementById("frase").value="";
                 console.log("La frase tiene caracteres especiales");
@@ -130,7 +130,12 @@
               }else{               
                 document.getElementById("fraseEncriptada").value = frase;
               }
-              document.getElementById("frase").value = "";
+              document.getElementsByClassName("fraseEncriptada")[0].style.backgroundImage="none";
+              document.getElementsByClassName("hTres")[0].style.display="none";
+              document.getElementsByClassName("parrafo")[0].style.display="none";
+              
+              document.getElementsByClassName("copiarTexto")[0].style.display="block"; 
+             document.getElementById("frase").value = "";
       }
      
       function copiarTexto(fraseEncriptada) { 
