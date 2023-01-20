@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+
+    <title>Encriptador-AluraChallenge</title>
+</head>
+  <body>
+    
+    <header>
+      <img class="logo" src="imagenes/Logo.png" alt="Logo Alura Latam"> <!-- ctrl+espacio   para encontrar el archivo a enlazar-->
+    </header>
+
+    
+    <main>
+          <section class="caja1">
+                    <textarea id="frase" class="frase" cols="30" rows="10" placeholder="Ingrese el texto aqui..."></textarea>
+                  <div>
+                      <h6 class="informacion">&#x26A1 Solo letras minúsculas y sin acentos.</h6>
+                  </div>
+                    
+                  <div class="botones">
+                      <button class="encriptar" onclick="encriptar()">Encriptar!</button>
+                      <button class="desencriptar" onclick="desencriptar()">Desencriptar!</button>
+                  </div>
+          </section>
+
+          <section class="caja2">
+                    <textarea  id="fraseEncriptada" class="fraseEncriptada" cols="20" rows="10"></textarea>
+                    
+                    <!--<div class="contenedorPuppet">
+                      <img src="imagenes/Muñeco.png" alt="Muñeco Alura">
+                    </div>-->
+
+                    <div class="h3Caja">
+                            <h3 class="hTres">Ningún mensaje fue encontrado</h3>       
+                   
+                            <p class="parrafo">Ingresa el texto que desees encriptar o desencriptar.</p>
+                    <div class="btnCopiar">
+                      <button  id="copiarTexto" class="copiarTexto" onclick="copiarTexto('fraseEncriptada')">Copiar</button>              
+                    </div>
+          </section>
+    </main>
+    <footer>
+
+    </footer>
+    
+    
+    <script>
+      
+      document.getElementById("frase").value = "";
+      document.getElementById("fraseEncriptada").value = "";
+     document.getElementsByClassName("copiarTexto")[0].style.display = "none";
+      
+             
+      
+
+            function encriptar() {
+              // Obtener la frase  del textarea proporcionada por el usuario
+              let frase = document.getElementById("frase").value;
+              
+              
+              
+              // Validar si la frase contiene letras mayúsculas, números, acento "´" y caracteres especiales.
+              
+              if (/[A-ZÁÉÍÓÚáéíóú0-9]/.test(frase)) {
+                alert("No se permite letras Mayúsculas \nNúmeros  y el uso del Acento");
+                document.getElementById("frase").value="";
+                return;
+              }
+
+              
+              if (/[^a-zA-Z0-9,\ ;\ ñ\ \n . ]/g.test(frase)) {
+                alert("No se permite Caracteres Especiales");
+                document.getElementById("frase").value="";
+                console.log("La frase tiene caracteres especiales");
+                return;
+              } 
+              
+              
+              // Reemplazar las letras con las "llaves" de encriptación
+              
+              frase = frase.replace(/a/g, "ai"   );
+              frase = frase.replace(/e/g, "enter");
+              frase = frase.replace(/i/g, "imes" );
+              frase = frase.replace(/o/g, "ober" );
+              frase = frase.replace(/u/g, "ufat" );
+
+              // Mostrar la frase encriptada en el textarea "fraseEncriptada"
+              document.getElementById("fraseEncriptada").value = frase;
+              
+              // 
+              document.getElementsByClassName("fraseEncriptada")[0].style.backgroundImage="none";
+              document.getElementsByClassName("hTres")[0].style.display="none";
+              document.getElementsByClassName("parrafo")[0].style.display="none";
+              
+              document.getElementsByClassName("copiarTexto")[0].style.display="block";
+         
+              
+              document.getElementById("frase").value="";  
+             
+              
+            }
+      
+      function desencriptar() {
+        
+              // Obtener la frase encriptada del textarea "frase"
+              let frase = document.getElementById("frase").value;
+              let frase2=frase;
+
+             
+              // Reemplazar las "llaves" de encriptación con las letras originales
+              frase = frase.replace(/enter/g, "e");
+              frase = frase.replace(/imes/g, "i");
+              frase = frase.replace(/ai/g, "a");
+              frase = frase.replace(/ober/g, "o");
+              frase = frase.replace(/ufat/g, "u");
+
+              // Mostrar la frase desencriptada en el textarea de "fraseEncriptada" si se cumple la condición
+              if (frase2===frase){
+                return;
+              }else{               
+                document.getElementById("fraseEncriptada").value = frase;
+              }
+              document.getElementById("frase").value = "";
+      }
+     
+      function copiarTexto(fraseEncriptada) { 
+        let textArea = document.getElementById(fraseEncriptada);
+        let texto=textArea.value;           
+        //document.getElementById("frase").value = "";
+
+        
+        
+        if(textArea.value === "") {
+                alert("No hay nada para copiar");
+
+              
+          } else {                                      
+                    textArea.select();
+                    navigator.clipboard.writeText(texto)   
+                                    
+                   
+                                .then(() => {
+                                  document.getElementById("frase").value = texto;
+                                  document.getElementById("fraseEncriptada").value = "";
+                                  alert('Texto copiado \ny a un click de DESENCRIPTAR!:    ' + texto);
+                                })
+                                .catch(err => {
+                                    alert('Error al copiar texto al portapapeles: ', err);
+                                });
+                 }
+      }   
+      /*
+      function ocultarBotonCopiar(fraseEncriptada, copiarTexto) {
+      const textarea = document.getElementById(fraseEncriptada);
+      const boton = document.getElementById(copiarTexto);
+                               
+
+      textarea.addEventListener("input", () => {
+              if (textarea.value === "") {
+                boton.style.display="none";
+                //document.getElementsByClassName("copiarTexto")[0].style.display="none";
+                textarea.style.backgroundImage="url(imagenes/Muñeco.png)";
+
+              } else {
+                boton.style.display="block";
+                //document.getElementsByClassName("copiarTexto")[0].style.display="block";
+              }
+            });
+      }
+      ocultarBotonCopiar("fraseEncriptada", "copiarTexto";)*/
+    </script>
+  </body>
+  
+</html>
