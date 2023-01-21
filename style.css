@@ -3,9 +3,7 @@
     
 }   
 
-header{
-    background:#ba6c6c;
-}
+
 
 .logo{
      position: absolute;
@@ -28,20 +26,23 @@ header{
 }
 
 .caja1{
+    
     float: left;
     background: #425161;
     position: relative;
     left:240px;
     
-    width: 1440px;
+    width: 75%;/*1440px;*/ 
     height: 1024px;
+  
     
 }
+
 
 .frase{
     font-size: 1.5em;
     position: absolute;
-    width: 680px;
+    width: 47.2%; /*680px;*/
     height: 450px;
     
     top: 90px;
@@ -52,15 +53,22 @@ header{
     /*text-transform: lowercase;*/
     resize: none;
     line-height: 150%; 
+    
 
     
 }
+
 
 ::placeholder{color: #0a3871;
 }
     
 .frase:focus{
         outline: none; /* que  no resalte la caja del textarea*/
+}
+
+.informacion::first-letter{
+    color: yellow;
+    font-size: 20px;
 }
 
 .informacion{
@@ -84,7 +92,7 @@ header{
    
 
     position: absolute;
-    width: 680px;
+    width: 47.2%; /*680px;*/
     height: 67px;
  
     top: 885px;
@@ -99,20 +107,46 @@ header{
     color: white;
     cursor: pointer;
     height: 67px;
-    width: 328px;
+    width: 48.2%;/*328px;*/
 }
 
 .desencriptar{
     font-size: 1.5em;
-    background:#d8dfe8;
+    background:white;
     border: 1px solid #0a3871;
     border-radius: 24px;
     color: #0a3871;
     cursor: pointer;
     height: 67px;
-    width: 328px;
+    width: 48.2%;/*328px;*/
     margin-left: 30px;
 }
+
+/*-----------------propiedad Sibling(hermano)---------------------*/
+
+    button.encriptar:hover {
+        background-color: white;
+        color: #0a3871;
+        border: white;
+    }
+
+    /*button.encriptar:hover ~ button.desencriptar {
+        background-color: #0a3871;
+        color: white;
+        border: #0a3871;
+    }*/
+
+    button.desencriptar:hover {
+        background-color: #0a3871;
+        color: white;
+        border: #0a3871;
+    }
+    button.desencriptar:hover ~ button.encriptar{
+        background-color: white;
+        color: #0a3871;
+        border: white;
+    }
+
 
 .caja2{
     
