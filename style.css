@@ -1,63 +1,79 @@
 *{
-    font-family: 'Courier Prime', monospace;
+    font-family: 'Courier Prime', monospace;  
+} 
+
+body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #F3F5FC;
+     
+}
+.container{   /*contenedor padre adicional*/
+    display: flex;/*establece que el contenedor padre es un contenedor flex, lo que permite a los elementos hijo dentro de él puedan adaptarse al tamaño de la pantalla y organizarse de manera flexible.*/
+    flex-wrap: wrap;/*establece que los elementos hijo dentro del contenedor flex deben adaptarse al tamaño de la pantalla y, si es necesario, saltar a la siguiente línea.*/
+    justify-content: space-between;/*establece cómo se alinean los elementos hijo dentro del contenedor flex. Por ejemplo, "justify-content: space-between" distribuye los elementos hijo de manera equitativa en el espacio disponible.*/
+}
+
+header{
+    position: sticky;/*permite que un elemento se mantenga fijo en una posición específica de la página mientras se desplaza hacia abajo, y se comporte como un elemento "position: relative" hasta que alcanza un punto específico en la página.*/
+    top: 0;
     
-}   
-
-
+   
+}
 
 .logo{
-     position: absolute;
-
-
-   /* display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 40px;*/
-
-    /*width: 120px;
-    height: 48px;*/
-    width: 8.5%;
-    height: 6.5%;
-    margin-top: 10px;
-    z-index: 9999;
     
- 
+    width: 120px;
+    height: 48px;
+    
+   
+}
+
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    
+
+    /*width: 1440px;*/
+    width: 75%;
+    margin: 0 auto;   
 }
 
 .caja1{
-    
-    float: left;
-    background: #425161;
+    background-color: #F3F5FC;      
+    width:680px;
+    height: 784px;
     position: relative;
-    left:240px;
-    
-    width: 75%;/*1440px;*/ 
-    height: 1024px;
-  
-    
+
+    margin-top: auto;
+    margin-bottom: 32px;     
+     
 }
 
-
-.frase{
-    font-size: 1.5em;
-    position: absolute;
-    width: 47.2%; /*680px;*/
-    height: 450px;
-    
-    top: 90px;
-    left: 240px;
-    border: none;
-    color: #0a3871;
-
-    /*text-transform: lowercase;*/
-    resize: none;
-    line-height: 150%; 
-    
-
-    
+.textarea1{
+    display: flex;
+    justify-content: center;
+    background-color: #797979;
+    width: 680px;
+    height: 50%;  
 }
 
+                .frase{
+                    flex-basis: 100%;    
+                    font-size: 1.5em;
+                    border: none;
+                    margin: 0;
+                    padding: 0;
+
+                    resize: none;
+                    line-height: 150%;
+                    
+                }
 
 ::placeholder{color: #0a3871;
 }
@@ -66,214 +82,349 @@
         outline: none; /* que  no resalte la caja del textarea*/
 }
 
-.informacion::first-letter{
-    color: yellow;
-    font-size: 20px;
-}
-
 .informacion{
-    font-size: 10px;
-    font-weight: bold;
-
     
-
+    background-color: #F3F5FC;    
+    width: 300px;
+    height: 18px;    
     position: absolute;
-    width: 252px;
-    height: 18px;
-    top: 851px;
-    left: 240px;
+    top: 683px;
 }
+
+                .info::first-letter{
+                    color: rgb(0, 0, 0);
+                    font-size: 20px;
+                }
+
+                .info{
+                    color: rgb(0, 0, 0);
+                    font-size: 0.7em;
+                }
+
+
 
 .botones{
-    display: flex;    
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-   
-
-    position: absolute;
-    width: 47.2%; /*680px;*/
-    height: 67px;
- 
-    top: 885px;
-    left: 240px;
-}
-
-.encriptar{
-    font-size: 1.5em;
-    background-color: #0a3871;
-    border: 1px solid #0a3871;
-    border-radius: 24px;
-    color: white;
-    cursor: pointer;
-    height: 67px;
-    width: 48.2%;/*328px;*/
-}
-
-.desencriptar{
-    font-size: 1.5em;
-    background:white;
-    border: 1px solid #0a3871;
-    border-radius: 24px;
-    color: #0a3871;
-    cursor: pointer;
-    height: 67px;
-    width: 48.2%;/*328px;*/
-    margin-left: 30px;
-}
-
-/*-----------------propiedad Sibling(hermano)---------------------*/
-
-    button.encriptar:hover {
-        background-color: white;
-        color: #0a3871;
-        border: white;
-    }
-
-    /*button.encriptar:hover ~ button.desencriptar {
-        background-color: #0a3871;
-        color: white;
-        border: #0a3871;
-    }*/
-
-    button.desencriptar:hover {
-        background-color: #0a3871;
-        color: white;
-        border: #0a3871;
-    }
-    button.desencriptar:hover ~ button.encriptar{
-        background-color: white;
-        color: #0a3871;
-        border: white;
-    }
-
-
-.caja2{
-    
-    background: #ffffff;
-    position: relative;
-    top: 40px;
-    float:right;
-    right: 280px;
-    
-    /*margin-top: 10px;*/
-    width: 400px;
-    height: 944px;
-    
-    
-    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-    border-radius: 32px;
-
-    
-}
-
-/*.fraseEncriptada{
-    
-    
-
-    background: white;
-    background-image: url(imagenes/Muñeco.png);
-    background-repeat: no-repeat;
-    //border: none;
-    border-radius: 24px;
-    color: #0a3871;
-    margin-left: 98px;
-    margin-top: 20px;
-    padding-left: 20px;
-   //position: fixed;
-    resize: none;
-
-    position: absolute;
-width: 336px;
-height: 315px;
-left: 1050px;
-top: 266px;
-
-
-}*/
-
-.fraseEncriptada{
-    width: 100%;
-    background: white;
-    background-image: url(imagenes/Muñeco.png);
-    background-position: 0px 150px;
-    background-repeat: no-repeat;
-    border: none;
-
-    font-size: 1.5em;
-    position: absolute;
-    right: 28px;
-    top: 32px;
-    width: 336px !important;
-    height: 781px !important; 
-    outline: none;    
-    resize: none;
-    line-height: 150%;
-}
-.fraseEncriptada{
-    outline: none; /* que  no resalte la caja del textarea*/
-}
-
-.h3Caja{
-    text-align: center;
-    position: absolute;
-    width: 336px;
-    height: 122px;
-    top: 579px;
-    left: 32px;
-
-}
-.h3Caja h3{
-    font-size: 2em;
-    font-weight: bold;
-}
-
-.h3Caja p{
-    padding-top: 10px;
-    font-size: 1.5em;
-}
-
-.copiarTexto{
-    /*display: none;*/
-    
-    width: 328px;
-    height: 67px;
-    position: absolute;
-    top: 265px;
-    left: 3px;
-    
-   
-    
-    font-size: 1.5em;
-    border: 1px solid #0a3871;
-    border-radius: 24px;
-    color: #0a3871;
-    cursor: pointer; 
-
-    
-    /*background:#d8dfe8;*/
-}
-
-.hidden{
-    display: none;
-}
-/*.copiarTexto{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding: 24px;
-    gap: 8px;
+    padding: 0;
+    margin: 0;
+    
+    gap: 24px;
 
+    background-color: #F3F5FC;
+    width: 680px;
+    height: 67px;
     position: absolute;
+    
+    
+    top:717px;
+    
+}
+
+            .encriptar{
+              
+                font-size: 1.5em;
+                background-color: #0a3871;
+                border: 1px solid #0a3871;
+                border-radius: 24px;
+                color: white;
+                cursor: pointer;
+                height: 67px;
+                width: 48.2%;/*328px;*/
+            }
+
+            .desencriptar{
+                
+                font-size: 1.5em;
+                background:white;
+                border: 1px solid #0a3871;
+                border-radius: 24px;
+                color: #0a3871;
+                cursor: pointer;
+                height: 67px;
+                width: 48.2%;/*328px;*/
+                
+                            }
+                            button.encriptar:hover {
+                                background-color: white;
+                                border: 1px solid #0a3871;
+                                color: #0a3871;
+                                
+                            }
+                        
+                            button.encriptar:hover ~ button.desencriptar {
+                                background-color: #0a3871;
+                                color: white;
+                                border: #0a3871;
+                            }
+                        
+                            button.desencriptar:hover {
+                                background-color: #0a3871;
+                                color: white;
+                                border: #0a3871;
+                            }
+                            button.desencriptar:hover ~ button.encriptar{
+                                background-color: white;
+                                border: 1px solid #0a3871;
+                                color: #0a3871;
+                                border: white;
+                            }
+
+
+.caja2{
+   
+    background-color: white;   
+    width: 400px;       
+    height: 944px;
+    border-radius: 32px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /*box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);*/
+    
+    
+}
+
+.textarea2{
+    display: flex;
+    background-color: #F3F5FC;
+    width: 336px;
+    height: 781px;
+    margin: 32px 131px auto;   
+}
+
+        .fraseEncriptada{
+            flex-basis: 100%;
+            background-image: url(imagenes/Muñeco.png);
+            background-repeat: no-repeat;
+            background-position: center center;   
+            font-size: 1.5em;
+            border: none;
+            margin: 0;
+            padding: 0;
+           
+
+            resize: none;
+            line-height: 150%;
+        }
+
+        .fraseEncriptada:focus{
+            outline: none; /* que  no resalte la caja del textarea*/
+        }
+
+.hpCaja{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    width: 336px;
+    height: 122px;
+    position: absolute;
+    top:650px;
+    z-index: 1;   
+}
+
+        .hTres{
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .parrafo{
+            text-align: center;
+            padding-top: 10px;
+            font-size: 1.5em;
+        }
+
+.btnCopiar{
+    display: flex;
+    justify-content: center;
+
+   
+    background-color: white;
     width: 336px;
     height: 67px;
-    left: 1032px;
-    top: 885px;
+    position: absolute;
+    top: 893px;   
+}
 
-    font-size: 1.5em;
-    border: 1px solid #0a3871;
-    border-radius: 24px;
-    color: #0a3871;
-    cursor: pointer;   
+        .copiarTexto{
+            width: 328px;
+            height: 67px;
 
-}*/
+            font-size: 1.5em;
+            border: 1px solid #0a3871;
+            border-radius: 24px;
+            color: #0a3871;
+            cursor: pointer; 
+        }
+
+footer{
+    display: flex;
+    justify-content: center; 
+    background-color: #F3F5FC;
+   
+}
+                .piePagina{ 
+                    width: 375px;
+                    height: 18px;                
+                   font-size: 1em;
+                   font-weight: bold;
+                   color: #0a3871;  
+                }
+
+
+
+@media (max-width: 1440px) {
+    body{
+    background-color: #F3F5FC;
+    }  
+    main{
+        width:80%;        
+    } 
+
+    .caja1{
+        width: 55%;
+        margin-right: 2%;
+        box-sizing: border-box;        
+    }
+    .textarea1{
+        width: 90%;
+        height: 70%;
+        margin: 0 auto;
+    }
+    .botones{
+        width: 100%;        
+    }
+    .caja2{
+        width: 38%;
+        margin-right: 2%;
+        box-sizing: border-box;
+    } 
+    .textarea2{
+        width: 81%;
+    }
+    .hpCaja{
+        width: 24.5%;
+    }
+    .btnCopiar{
+        width: 24.5%;
+    }
+}
+
+@media (max-width: 1024px) {
+    body{
+        background-color: #F3F5FC;
+            
+    }
+    main{
+        width: 100%;
+        flex-direction: row; 
+    }
+    .caja1{
+        width: 55%;
+    }
+    .textarea1{
+        width: 90%;
+        height: 70%;
+        margin: 0 auto;
+    }
+    .botones{
+        width: 100%;    
+    }
+    .textarea2{
+        width: 94%;
+    }
+    .hpCaja{
+        width: 32%;
+    }
+    .caja2{
+        width: 35%;
+    }
+    .btnCopiar{
+        width: 35%;
+    }
+    
+
+}
+
+@media (max-width: 768px) {
+    body{
+    background-color: #F3F5FC;
+    z-index: 1;
+    }
+    main{
+        flex-direction: column;
+    }
+    .caja1{
+        width: 87%;
+        margin-top: 1px;
+    }
+    .caja2{
+        width: 87%;
+        border-radius: 0;
+        height: 642px;
+    } 
+    .textarea2{
+        width: 81%;
+        height: 80%;
+        margin-top: 0;
+    }
+    .hpCaja{
+        top: 1200px;
+        width: 70%;
+    } 
+    .btnCopiar{
+        width: 70%;
+        margin-top: 95%;
+    }  
+}
+
+@media (max-width: 480px) {
+    body{
+    background-color: #F3F5FC;
+    }
+    .informacion{
+        top: 570px;
+    }
+    .botones{
+        display: flex;
+        flex-direction: column;
+        height: 158px;
+        top: 600px;
+    }
+    .encriptar{
+        width: 100%;
+    }
+    .desencriptar{
+        width: 100%;    
+    }
+
+    .hpCaja{
+        top:1150px;
+    }
+    .btnCopiar{
+       margin-top: 525px;
+    }    
+}
+
+@media (max-width: 375px) {
+    body{
+    background-color: #F3F5FC;
+    }
+    .informacion{
+        top: 575px;
+    }
+    .botones{
+        height: 158px;
+        top: 600px;
+    }
+   .hpCaja{
+    width: 70%;
+    top: 1220px;
+
+   }   
+}
