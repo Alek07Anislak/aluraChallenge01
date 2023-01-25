@@ -7,6 +7,9 @@ body{
     justify-content: center;
     flex-direction: column;
     background-color: #F3F5FC;
+
+    align-items: flex-end;
+
      
 }
 .container{   /*contenedor padre adicional*/
@@ -16,6 +19,7 @@ body{
 }
 
 header{
+    width: 100%;
     position: sticky;/*permite que un elemento se mantenga fijo en una posición específica de la página mientras se desplaza hacia abajo, y se comporte como un elemento "position: relative" hasta que alcanza un punto específico en la página.*/
     top: 0;
     
@@ -224,7 +228,7 @@ main {
     height: 122px;
     position: absolute;
     top:650px;
-    z-index: 1;   
+    /*z-index: 1;*/   
 }
 
         .hTres{
@@ -262,13 +266,16 @@ main {
             cursor: pointer; 
         }
 
-/*footer{
-
-    display: flex;
-    justify-content: center; 
-    background-color: #F3F5FC;
+footer{
+    position: fixed;
+    bottom: 0;
+    background-color: #0a3871;
+    width: 100%;
+    height: 20px;
+}    
+    
    
-}*/
+
 footer p{
     text-align: center;
     
@@ -277,8 +284,9 @@ footer p{
                     /*width: 375px;*/
                     height: 18px;                
                    font-size: 1em;
+                   color: white;
                    font-weight: bold;
-                   color: #0a3871;  
+                    
                 }
 
 
@@ -392,7 +400,7 @@ footer p{
                                                        top: 855px;
     } 
     .textarea2{
-        idth: 81%;
+        width: 81%;
         height: 80%;
         margin-top: 0;
     }
@@ -408,12 +416,12 @@ footer p{
         width: 60%;
         top: 195px;
     } 
-    footer{
-        background-color: #797979;
+    /*footer{
+        
         position: fixed;
         bottom:0;
         width: 100%;
-    } 
+    } */
     
 }
 
@@ -455,6 +463,9 @@ footer p{
         
         top:70px;
     }
+    .parrafo{
+        font-size: 0.8em;
+    }
         
 }
 
@@ -464,6 +475,7 @@ footer p{
     }
     .informacion{
         top: 370px;
+        width: 250px;
     }
     .botones{
         height: 158px;
@@ -474,6 +486,9 @@ footer p{
     }
     .textarea2{
         margin-top: auto;
+    }
+    .fraseEncriptada{
+        width: 250px;
     }
    .hpCaja{
     width: 70%;
