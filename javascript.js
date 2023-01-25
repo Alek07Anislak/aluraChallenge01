@@ -2,6 +2,7 @@
       
       document.getElementById("frase").value ="";
       document.getElementById("fraseEncriptada").value ="";
+      
       document.getElementsByClassName("copiarTexto")[0].style.display = "none";      
                
 
@@ -74,8 +75,9 @@
 
               // 
               document.getElementsByClassName("fraseEncriptada")[0].style.backgroundImage="none";
-              document.getElementsByClassName("hTres")[0].style.display="none";
-              document.getElementsByClassName("parrafo")[0].style.display="none";
+              document.getElementsByClassName("hpCaja")[0].style.display="none";
+              //document.getElementsByClassName("hTres")[0].style.display="none";
+              //document.getElementsByClassName("parrafo")[0].style.display="none";
               
               document.getElementsByClassName("copiarTexto")[0].style.display="block";
          

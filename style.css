@@ -262,14 +262,19 @@ main {
             cursor: pointer; 
         }
 
-footer{
+/*footer{
+
     display: flex;
     justify-content: center; 
     background-color: #F3F5FC;
    
+}*/
+footer p{
+    text-align: center;
+    
 }
                 .piePagina{ 
-                    width: 375px;
+                    /*width: 375px;*/
                     height: 18px;                
                    font-size: 1em;
                    font-weight: bold;
@@ -360,42 +365,85 @@ footer{
         flex-direction: column;
     }
     .caja1{
+       
         width: 87%;
         margin-top: 1px;
+        background-color: white;
+        height: 740px;
     }
+                                                    .textarea1{
+                                                        height: 480px;
+                                                    }
+                                                    .informacion{
+                                                        top: 620px;
+                                                        background-color: white;
+                                                    }
+                                                    .botones{
+                                                        top: 660px;
+                                                        background-color: white;
+                                                    }
+       
     .caja2{
-        width: 87%;
-        border-radius: 0;
-        height: 642px;
+                                                    position: absolute;
+        width: 90%;
+        border-radius: 36px;
+
+                                                       height:260px /*642px*/;
+                                                       top: 855px;
     } 
     .textarea2{
-        width: 81%;
+        idth: 81%;
         height: 80%;
         margin-top: 0;
     }
+    .fraseEncriptada{
+        background-image: none;
+    }
+
     .hpCaja{
-        top: 1200px;
+        top: /*1200*/71px;
         width: 70%;
     } 
     .btnCopiar{
-        width: 70%;
-        margin-top: 95%;
-    }  
+        width: 60%;
+        top: 195px;
+    } 
+    footer{
+        background-color: #797979;
+        position: fixed;
+        bottom:0;
+        width: 100%;
+    } 
+    
 }
 
 @media (max-width: 480px) {
     body{
     background-color: #F3F5FC;
     }
+    .caja1{
+        height: 560px;
+    }
+                .textarea1{
+                    height: 370px;
+                }
+
     .informacion{
-        top: 570px;
+        top: 375px;
     }
     .botones{
         display: flex;
         flex-direction: column;
         height: 158px;
-        top: 600px;
+        top: 395px;
     }
+            .caja2{
+                top: 640px;
+            }
+            .textarea2{
+                height: 70%;
+            }
+           
     .encriptar{
         width: 100%;
     }
@@ -404,11 +452,10 @@ footer{
     }
 
     .hpCaja{
-        top:1150px;
+        
+        top:70px;
     }
-    .btnCopiar{
-       margin-top: 525px;
-    }    
+        
 }
 
 @media (max-width: 375px) {
@@ -416,15 +463,25 @@ footer{
     background-color: #F3F5FC;
     }
     .informacion{
-        top: 575px;
+        top: 370px;
     }
     .botones{
         height: 158px;
-        top: 600px;
+        top: 390px;
+    }
+    .caja2{
+        top:625px;
+    }
+    .textarea2{
+        margin-top: auto;
     }
    .hpCaja{
     width: 70%;
-    top: 1220px;
-
+    top: 60px;
    }   
+
+   .btnCopiar{
+    top:220px;
+    width: 100%;
+   }
 }
