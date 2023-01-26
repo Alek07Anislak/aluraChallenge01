@@ -89,7 +89,7 @@ main {
 .informacion{
     
     background-color: #F3F5FC;    
-    width: 300px;
+    width: 100%;
     height: 18px;    
     position: absolute;
     top: 683px;
@@ -97,12 +97,12 @@ main {
 
                 .info::first-letter{
                     color: rgb(0, 0, 0);
-                    font-size: 20px;
+                    font-size: 2vw;
                 }
 
                 .info{
                     color: rgb(0, 0, 0);
-                    font-size: 0.7em;
+                    font-size: 0.8vw;
                 }
 
 
@@ -280,6 +280,7 @@ footer{
 footer{
     text-align: center;
     height: auto;
+    z-index: 10;
     
 }
                 .piePagina{ 
@@ -348,11 +349,16 @@ footer{
         height: 70%;
         margin: 0 auto;
     }
+    .info{
+        font-size: 1.5vw;
+    }
+
     .botones{
         width: 100%;    
     }
     .textarea2{
         width: 94%;
+        margin-top: 20px;
     }
     .hpCaja{
         width: 32%;
@@ -389,6 +395,10 @@ footer{
                                                         top: 620px;
                                                         background-color: white;
                                                     }
+                                                    .info::first-letter{                                                        
+                                                        font-size: 3vw;
+                                                    }
+
                                                     .botones{
                                                         top: 660px;
                                                         background-color: white;
@@ -415,6 +425,12 @@ footer{
         top: /*1200*/71px;
         width: 70%;
     } 
+    .hTres{
+        font-size: 4vw;
+    }
+    .parrafo{
+        font-size: 3.2vw;
+    }
     .btnCopiar{
         width: 60%;
         top: 195px;
@@ -440,7 +456,13 @@ footer{
                 }
 
     .informacion{
-        top: 375px;
+        top: 370px;
+    }
+    .info::first-letter{                                                        
+        font-size: 5vw;
+    }
+    .info{
+        font-size: 2.5vw;
     }
     .botones{
         display: flex;
@@ -478,7 +500,10 @@ footer{
     }
     .informacion{
         top: 370px;
-        width: 250px;
+      
+    }
+    .info{
+        font-size: 3vw;
     }
     .botones{
         height: 158px;
@@ -496,6 +521,12 @@ footer{
    .hpCaja{
     width: 70%;
     top: 60px;
+   }
+   .hTres{
+        font-size: 7vw;
+   }
+   .parrafo{
+        font-size: 6vw;
    }   
 
    .btnCopiar{
