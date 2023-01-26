@@ -54,7 +54,7 @@ main {
     height: 784px;
     position: relative;
 
-    margin-top: auto;
+    /*margin-top: auto;*/
     margin-bottom: 32px;     
      
 }
@@ -149,7 +149,7 @@ main {
                 height: 67px;
                 width: 48.2%;/*328px;*/
                 
-                            }
+            }
                             button.encriptar:hover {
                                 background-color: white;
                                 border: 1px solid #0a3871;
@@ -160,19 +160,19 @@ main {
                             button.encriptar:hover ~ button.desencriptar {
                                 background-color: #0a3871;
                                 color: white;
-                                border: #0a3871;
+                                border: 1px solid white;
                             }
                         
                             button.desencriptar:hover {
                                 background-color: #0a3871;
                                 color: white;
-                                border: #0a3871;
+                                border: white;
                             }
                             button.desencriptar:hover ~ button.encriptar{
                                 background-color: white;
                                 border: 1px solid #0a3871;
                                 color: #0a3871;
-                                border: white;
+                               
                             }
 
 
@@ -180,7 +180,7 @@ main {
    
     background-color: white;   
     width: 400px;       
-    height: 944px;
+    height: 815px/*944px*/;
     border-radius: 32px;
     
     display: flex;
@@ -196,8 +196,8 @@ main {
     display: flex;
     background-color: #F3F5FC;
     width: 336px;
-    height: 781px;
-    margin: 32px 131px auto;   
+    height: 80%;
+    /*margin: 32px 131px auto;*/   
 }
 
         .fraseEncriptada{
@@ -209,6 +209,7 @@ main {
             border: none;
             margin: 0;
             padding: 0;
+            height: 100%;
            
 
             resize: none;
@@ -222,25 +223,25 @@ main {
 .hpCaja{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /*justify-content: center;*/
     background-color: #ffffff;
     width: 336px;
-    height: 122px;
+    height: auto;
     position: absolute;
-    top:650px;
-    /*z-index: 1;*/   
+    top:540px;
+    z-index: 1;   
 }
 
         .hTres{
             text-align: center;
-            font-size: 2em;
+            font-size: 2vw;
             font-weight: bold;
         }
 
         .parrafo{
             text-align: center;
             padding-top: 10px;
-            font-size: 1.5em;
+            font-size: 1.2vw;
         }
 
 .btnCopiar{
@@ -252,7 +253,7 @@ main {
     width: 336px;
     height: 67px;
     position: absolute;
-    top: 893px;   
+    top: 764px/*893px*/;   
 }
 
         .copiarTexto{
@@ -276,11 +277,13 @@ footer{
     
    
 
-footer p{
+footer{
     text-align: center;
+    height: auto;
     
 }
                 .piePagina{ 
+                    
                     /*width: 375px;*/
                     height: 18px;                
                    font-size: 1em;
